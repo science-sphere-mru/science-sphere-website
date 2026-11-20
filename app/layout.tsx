@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "@fontsource-variable/archivo/wdth.css";
 import "@fontsource/space-mono/400.css";
 import "@fontsource/space-mono/700.css";
@@ -70,6 +71,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <div id="main">{children}</div>
         <CpuCursor />
+        {/* Vercel Web Analytics: page views, no cookies */}
+        <Analytics />
       </body>
     </html>
   );
